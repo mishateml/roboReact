@@ -10,4 +10,7 @@
       font-weight: 200;
       color: #0ccac4;
     }
- 
+    .scroll::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid rgb(41, 99, 156);
+    }

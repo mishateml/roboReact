@@ -4,7 +4,7 @@ import './index.css';
 import 'tachyons'; 
 import registerServiceWorker from './registerServiceWorker';
 
-import App from './app'
+import App from './containers/app'
 
 ReactDOM.render(
        <App />

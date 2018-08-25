@@ -1,8 +1,8 @@
 import  React, {Component}  from 'react';
 
-import CardList from './CardList';
-import SearchBox from './SearchBox'; 
-import Scroll from './Scroll';
+import CardList from '../components/CardList';
+import SearchBox from '../components/SearchBox'; 
+import Scroll from '../components/Scroll';
 import './app.css';
 
 
@@ -30,30 +30,27 @@ constructor(){
     }
 
     render(){
+        const {robots, searchField } = this.state;
 
-        const filtredRobots = this.state.robots.filter(robot =>{
-            return robot.name.toLowerCase().includes(this.state.searchField.toLowerCase())
+        const filtredRobots = robots.filter(robot =>{
+            return robot.name.toLowerCase().includes(searchField.toLowerCase())
         })
-        
-        if(this.state.robots.length === 0){
-            return (
+    
+            return !robots.length ? (
             <div className='flex justify-center'>
               <h1 className='tc outline pa3'>LOADING.....</h1>
             </div>)
-        }
-        else
-        {
-        return (
+        :(
         <div className='tc'>
             <h1>RoboFrends</h1>
             <SearchBox searchChenge={this.onSearchChenge} />
-            <Scroll>
+            <Scroll className='scroll'>
                 <CardList robots= {filtredRobots}/>
             </Scroll>
 
         </div> 
         );
-    }
+    
     } 
 }
 
