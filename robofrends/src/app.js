@@ -2,6 +2,7 @@ import  React, {Component}  from 'react';
 
 import CardList from './CardList';
 import SearchBox from './SearchBox'; 
+import Scroll from './Scroll';
 import './app.css';
 
 
@@ -46,7 +47,9 @@ constructor(){
         <div className='tc'>
             <h1>RoboFrends</h1>
             <SearchBox searchChenge={this.onSearchChenge} />
-            <CardList robots= {filtredRobots}/>
+            <Scroll>
+                <CardList robots= {filtredRobots}/>
+            </Scroll>
 
         </div> 
         );
